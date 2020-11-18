@@ -34,7 +34,7 @@ public:
 			bool IsSwaped = false;
 			for (int i = 0; i < length - d; i++)
 			{
-				if (cmp(seq->Get(i), seq->Get(i + d)) == 1)//TO DO
+				if (cmp(seq->Get(i), seq->Get(i + d)) == 1)
 				{
 					seq->Swap(i, i + d);
 					IsSwaped = true;
@@ -66,7 +66,7 @@ public:
 			bool IsSwaped = false;
 			for (int i = 0; i < length - d; i++)
 			{
-				if (cmp(seq->Get(i), seq->Get(i + d)) == 1)//TO DO
+				if (cmp(seq->Get(i), seq->Get(i + d)) == 1)
 				{
 					seq->Swap(i, i + d);
 					IsSwaped = true;
