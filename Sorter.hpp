@@ -25,25 +25,17 @@ class InsertionSort: public ISorter<T>
 public:
 	virtual void Sort(Sequence<T>* seq, int (*cmp)(T, T)) override
 	{
-		int length = seq->GetLength();
-		int d = length / 2;
-
-
-		while (d >= 1)
+		T temp;
+		int item;
+		for (int i = 1; i < seq->GetLength(); i++)
 		{
-			bool IsSwaped = false;
-			for (int i = 0; i < length - d; i++)
+			temp = seq->Get(i);
+			item = i - 1;
+			while (item >= 0 && seq->Get(item) > temp)
 			{
-				if (cmp(seq->Get(i), seq->Get(i + d)) == 1)
-				{
-					seq->Swap(i, i + d);
-					IsSwaped = true;
-				}
-			}
-
-			if (IsSwaped == false)
-			{
-				d = d / 2;
+				seq->Set(seq->Get(item), item + 1);
+				seq->Set(temp, item);
+				item--;
 			}
 		}
 	}
